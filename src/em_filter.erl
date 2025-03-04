@@ -7,7 +7,7 @@
 %%% - Registering a filter with a discovery service
 %%%
 %%% @author Steve Roques
-%%% @version 0.1.0
+%%% @version 0.1.1
 %%% @end
 %%%-------------------------------------------------------------------
 -module(em_filter).
@@ -48,7 +48,7 @@ find_port() ->
 %%--------------------------------------------------------------------
 -spec register_filter(filter_url()) -> {ok, registered} | {error, term()}.
 register_filter(FilterUrl) ->
-    DiscoUrl = "http://localhost:8080",
+    DiscoUrl = embryo:get_em_disco_url(),
     RegisterUrl = DiscoUrl ++ "/register",
     io:format("Disco URL: ~p~n", [DiscoUrl]),
     io:format("Register URL: ~p~n", [RegisterUrl]),
